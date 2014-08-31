@@ -1,0 +1,26 @@
+<html>
+    <head>
+        {% block head %}
+            <title>Slim Project</title>
+            <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+            <link href="../../resources/css/style.css" />
+            <title>{% block title %}{% endblock %} - My Webpage</title>
+        {% endblock %}
+    </head>
+    <body>
+        <div id="main-container">
+            {% block navigation %}
+
+            {% endblock %}
+
+            {% block main_content %}
+                <h1>Slim Project</h1>
+            {% endblock %}
+        </div>
+        {% block footer %}
+            <div id="js-includes">
+                <script data-main="../../resources/js/main" src="../../resources/js/require.js"></script>
+            </div>
+        {% endblock %}
+    </body>
+</html>
