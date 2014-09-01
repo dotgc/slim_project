@@ -12,7 +12,7 @@ $app->get('/hello/:name', function ($name) use ($app, $db) {
 });
 
 $app->get('/yo', function () use ($app, $db) {
-    echo $app->render('layout.html', array('planet' => 'World'));
+    echo $app->render('layout.html', array('heading' => 'World'));
 });
 
 $app->run();
