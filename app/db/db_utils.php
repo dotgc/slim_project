@@ -69,6 +69,12 @@ class DB_Utils {
     }
 
     public function update_table_entry($table_name, $key_name, $key_val, $vals) {
+        /**
+        Takes the table_name, table_key_column_name, table_key_value, and an
+        associative array of column_name => value pairs to update
+        Assumes that the table has a primary/unique key of comprising
+        of just 1 column, which actually is a good practice.
+        */
         $query = sprintf("UPDATE %s ", $table_name);
         $updates = "SET ";
         foreach ($vals as $key => $val) {
@@ -80,6 +86,9 @@ class DB_Utils {
     }
 
     public function delete_rows($query, $vals) {
+        /**
+        Used to delete table rows. just a wrapper on do_write_query
+        */
         $res = $this->do_write_query($query, $vals);
         return $res;
     }
